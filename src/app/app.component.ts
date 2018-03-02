@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ArtistServices} from "./artist.services";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  list;
+  constructor(private artistService:ArtistServices){
+
+  }
+  ngOnInit(){
+    let that = this;
+    let promise = this.artistService.getList();
+    promise.subscribe(function (object) {
+      console.log(object);
+      that.list = object.result;
+      console.log(that.list);
+    },function (error) {
+
+    })
+  }
 }

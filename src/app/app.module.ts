@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import {ArtistServices} from "./artist.services";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -10,9 +12,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,HttpClientModule
   ],
-  providers: [],
+  providers: [ArtistServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
