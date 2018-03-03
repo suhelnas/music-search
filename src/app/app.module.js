@@ -11,6 +11,8 @@ var core_1 = require("@angular/core");
 var app_component_1 = require("./app.component");
 var artist_services_1 = require("./artist.services");
 var http_1 = require("@angular/common/http");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
+var forms_1 = require("@angular/forms");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -20,7 +22,7 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent
             ],
             imports: [
-                platform_browser_1.BrowserModule, http_1.HttpClientModule
+                platform_browser_1.BrowserModule, http_1.HttpClientModule, ng_bootstrap_1.NgbModule, forms_1.FormsModule
             ],
             providers: [artist_services_1.ArtistServices],
             bootstrap: [app_component_1.AppComponent]

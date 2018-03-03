@@ -6,7 +6,7 @@ export class ArtistServices{
   constructor(private httpClient:HttpClient){
 
   }
-  getList(): any{
-    return this.httpClient.get('/api/get/list')
+  getList(data): any{
+    return this.httpClient.post('/api/get/list',data)
   }
 }

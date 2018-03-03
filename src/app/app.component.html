@@ -1,12 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="clearfix">
-  <h1 style="text-align: center">Top Tracks</h1>
-<table class="table table-hover">
+  <div class="clearfix" style="margin-bottom: 20px; margin-top: 30px; margin-left: 20px">
+    <label> Track Name</label>
+   <input type="text" name="track" [(ngModel)]="trackName">
+    <button [disabled]="trackName==null" type="button" (click)="search()">Search</button>
+  </div>
+<table *ngIf="showTable" class="table table-hover">
   <thead>
   <th></th>
-  <th>Song Name</th>
-  <th>Artist Name</th>
-  <th>Listeners</th>
+  <th><a (click)="descendingSort(1)"><i class="fa fa-sort-down"></i></a><a (click)="ascendingSort(1)"><i class="fa fa-sort-up" ></i></a>Song Name</th>
+  <th><a (click)="descendingSort(2)"><i class="fa fa-sort-down"></i></a><a (click)="ascendingSort(2)"><i class="fa fa-sort-up" ></i></a>Artist Name</th>
+  <th><a (click)="descendingSort(3)"><i class="fa fa-sort-down"></i></a><a (click)="ascendingSort(3)"><i class="fa fa-sort-up" ></i></a>Listeners</th>
   </thead>
   <tbody>
   <tr *ngFor="let c of list">

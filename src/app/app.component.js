@@ -15,12 +15,21 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(artistService) {
         this.artistService = artistService;
         this.title = 'app';
+        this.showTable = false;
+        this.data = {
+            Query: null
+        };
     }
     AppComponent.prototype.ngOnInit = function () {
         var that = this;
-        var promise = this.artistService.getList();
+    };
+    AppComponent.prototype.search = function () {
+        var that = this;
+        this.data.Query = this.trackName;
+        var promise = this.artistService.getList(this.data);
         promise.subscribe(function (object) {
             console.log(object);
+            that.showTable = true;
             that.list = object.result;
             console.log(that.list);
         }, function (error) {

@@ -9,13 +9,14 @@ var _clientFiles = '/app/dist/';
 app.use(express.static(_clientFiles));
 app.use(bodyParser.urlencoded({ extended: false, limit: 10000000 }));
 app.use(bodyParser.json({ limit: '1000mb' }));
-app.get('/api/get/list', function (req, res) {
+app.post('/api/get/list', function (req, res) {
     var lastfm = new LastFM('5e72f53df93bee119b3666b64d1d4161', null);
     var opts = {
+        q: req.body.Query,
         limit: 20,
         page: 1
     };
-    lastfm.chartTopTracks(opts, function (err, data) {
+    lastfm.trackSearch(opts, function (err, data) {
         res.send({ result: data.result });
     });
 });

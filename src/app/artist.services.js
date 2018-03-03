@@ -15,8 +15,8 @@ var ArtistServices = /** @class */ (function () {
     function ArtistServices(httpClient) {
         this.httpClient = httpClient;
     }
-    ArtistServices.prototype.getList = function () {
-        return this.httpClient.get('/api/get/list');
+    ArtistServices.prototype.getList = function (data) {
+        return this.httpClient.post('/api/get/list', data);
     };
     ArtistServices = __decorate([
         core_1.Injectable(),

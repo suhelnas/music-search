@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {ArtistServices} from "./artist.services";
 import {HttpClientModule} from "@angular/common/http";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -12,7 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
     AppComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule
+    BrowserModule,HttpClientModule,NgbModule,FormsModule,AngularFontAwesomeModule
   ],
   providers: [ArtistServices],
   bootstrap: [AppComponent]
