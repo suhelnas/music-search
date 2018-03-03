@@ -8,9 +8,9 @@
 <table *ngIf="showTable" class="table table-hover">
   <thead>
   <th></th>
-  <th><a (click)="descendingSort(1)"><i class="fa fa-sort-down"></i></a><a (click)="ascendingSort(1)"><i class="fa fa-sort-up" ></i></a>Song Name</th>
-  <th><a (click)="descendingSort(2)"><i class="fa fa-sort-down"></i></a><a (click)="ascendingSort(2)"><i class="fa fa-sort-up" ></i></a>Artist Name</th>
-  <th><a (click)="descendingSort(3)"><i class="fa fa-sort-down"></i></a><a (click)="ascendingSort(3)"><i class="fa fa-sort-up" ></i></a>Listeners</th>
+  <th><a href="#"  (click)="descendingSort(1)"><i class="fa fa-sort-down"></i></a><a href="#" (click)="ascendingSort(1)" style="margin-right: 10px"><i class="fa fa-sort-up" ></i></a>Song Name</th>
+  <th><a href="#" (click)="descendingSort(2)"><i class="fa fa-sort-down"></i></a><a href="#" (click)="ascendingSort(2)"><i class="fa fa-sort-up" style="margin-right: 10px"></i></a>Artist Name</th>
+  <th><a href="#"(click)="descendingSort(3)"><i class="fa fa-sort-down"></i></a><a href="#"(click)="ascendingSort(3)"><i class="fa fa-sort-up" style="margin-right: 10px"></i></a>Listeners</th>
   </thead>
   <tbody>
   <tr *ngFor="let c of list">
