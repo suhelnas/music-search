@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="clearfix">
+  <h1 style="text-align: center">Music Search</h1>
   <div class="clearfix" style="margin-bottom: 20px; margin-top: 30px; margin-left: 20px">
-    <label> Track Name</label>
-   <input type="text" name="track" [(ngModel)]="trackName">
+   <input type="text" name="track" [(ngModel)]="trackName" placeholder="song">
     <button [disabled]="trackName==null" type="button" (click)="search()">Search</button>
   </div>
 <table *ngIf="showTable" class="table table-hover">
